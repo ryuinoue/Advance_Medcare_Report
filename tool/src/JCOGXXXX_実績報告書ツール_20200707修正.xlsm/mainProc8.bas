@@ -34,7 +34,7 @@ Public Sub mainProc8()
 
     Dim TempWord() As String
 
-    ’TEST
+    
      With ThisWorkbook.ActiveSheet
       
 
