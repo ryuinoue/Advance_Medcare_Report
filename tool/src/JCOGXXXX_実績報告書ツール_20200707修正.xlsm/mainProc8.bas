@@ -4,15 +4,15 @@ Option Explicit
 
 Public Sub mainProc8()
   
-    '2020.04.15 ì¬
-    'ÀÑ•ñ‘ì¬MainŠÖ”
+    '2020.04.15 ï¿½ì¬
+    'ï¿½ï¿½ï¿½Ñ•ñï¿½ï¿½ì¬Mainï¿½Öï¿½
     
-    '‹@”\
-    'ÀÑ•ñ‘ì¬‰æ–Ê‚æ‚èAİ’èæ“¾
-    'ÀÑ•ñ‘ì¬ŠÖ”Às
+    'ï¿½@ï¿½\
+    'ï¿½ï¿½ï¿½Ñ•ñï¿½ï¿½ì¬ï¿½ï¿½Ê‚ï¿½ï¿½Aï¿½İ’ï¿½æ“¾
+    'ï¿½ï¿½ï¿½Ñ•ñï¿½ï¿½ì¬ï¿½Öï¿½ï¿½ï¿½ï¿½s
     
     
-'    ì‹Æ—p•Ï”
+'    ï¿½ï¿½Æ—pï¿½Ïï¿½
     Dim adressAry1() As String
     Dim adressAry2() As String
     Dim adressAry3() As String
@@ -20,31 +20,31 @@ Public Sub mainProc8()
     Dim WordReplace() As String
     Dim WordMapping() As String
     
-'    ƒJƒEƒ“ƒ^[•Ï”
+'    ï¿½Jï¿½Eï¿½ï¿½ï¿½^ï¿½[ï¿½Ïï¿½
     Dim l As Long
     Dim m As Long
     Dim j As Long
     Dim i As Long
     Dim k As Long
     
-'    wordƒeƒ“ƒvƒŒ[ƒgŠi”[—p
+'    wordï¿½eï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½gï¿½iï¿½[ï¿½p
     Dim w1() As String
     Dim w2() As String
     Dim w3() As String
 
     Dim TempWord() As String
 
-
+    â€™TEST
      With ThisWorkbook.ActiveSheet
       
 
-        '“Ç‚İ‚Şi’»ƒŠƒXƒgƒtƒ@ƒCƒ‹–¼
+        'ï¿½Ç‚İï¿½ï¿½Şiï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½
         Dim ShintyokuFile As String
         ShintyokuFile = .Range("C5").Value
       
         If FindFile(WorkBookPath(ThisWorkbook.Path, "", ShintyokuFile)) = False Then
       
-            If MsgBox("i’»ƒŠƒXƒg‚ª‘¶İ‚µ‚Ä‚¢‚Ü‚¹‚ñ", vbOKOnly) = vbOK Then
+            If MsgBox("ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½ï¿½İ‚ï¿½ï¿½Ä‚ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½", vbOKOnly) = vbOK Then
                 
                 Exit Sub
                 
@@ -52,21 +52,21 @@ Public Sub mainProc8()
             
         End If
       
-        '“Ç‚İ‚Şi’»ƒŠƒXƒgƒV[ƒg–¼
+        'ï¿½Ç‚İï¿½ï¿½Şiï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½Vï¿½[ï¿½gï¿½ï¿½
         Dim ShintyokuSheet As String
         ShintyokuSheet = .Range("C7").Value
       
       
-        'wordƒ[ƒ‹ƒeƒ“ƒvƒŒ[ƒgƒtƒ@ƒCƒ‹•Û‘¶æ
+        'wordï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½eï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½Û‘ï¿½ï¿½ï¿½
         Dim wrdTmp As String
         wrdTmp = .Range("C8").Value
       
       
-        'i’»ƒŠƒXƒg“Ç‚İ‚İŠJns
+        'ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½Ç‚İï¿½ï¿½İŠJï¿½nï¿½s
         Dim ListStart As Long
         ListStart = 2
       
-        'i’»ƒŠƒXƒg“Ç‚İ‚İƒtƒ‰ƒO—ñ
+        'ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½Ç‚İï¿½ï¿½İƒtï¿½ï¿½ï¿½Oï¿½ï¿½
         Dim ReadRecord As String
         ReadRecord = .Range("C9").Value
       
@@ -78,11 +78,11 @@ Public Sub mainProc8()
     End With
     
     
-'    '--- Outlook‘€ì‚ÌƒIƒuƒWƒFƒNƒg ---'
+'    '--- Outlookï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½g ---'
     Dim objOutlook As Object
     Set objOutlook = CreateObject("Outlook.Application")
 
-    '--- Outlook‘€ì‚ÌƒIƒuƒWƒFƒNƒgA‰º‘‚«‚ÉƒtƒHƒ‹ƒ_[ì¬ ---'
+    '--- Outlookï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éƒtï¿½Hï¿½ï¿½ï¿½_ï¿½[ï¿½ì¬ ---'
 
     Dim myNameSpace As Object
     Dim DraftBox As Object
@@ -92,50 +92,50 @@ Public Sub mainProc8()
     Set DraftBox = myNameSpace.GetDefaultFolder(16)
     Set oNewFolder = DraftBox.Folders.Add(ShintyokuSheet & Format(Now(), "YYYYMMDD") & Format(Now(), "HHMM"))
 '
-'    '--- Outlook‘€ì‚ÌƒIƒuƒWƒFƒNƒgA‰º‘‚«‚ÉƒtƒHƒ‹ƒ_[ì¬ ---'
+'    '--- Outlookï¿½ï¿½ï¿½ï¿½ÌƒIï¿½uï¿½Wï¿½Fï¿½Nï¿½gï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Éƒtï¿½Hï¿½ï¿½ï¿½_ï¿½[ï¿½ì¬ ---'
     
     
     
-    'i’»ƒŠƒXƒgİ’è“Ç‚İ‚İŠJns
+    'ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½İ’ï¿½Ç‚İï¿½ï¿½İŠJï¿½nï¿½s
     Dim rec As Long
     rec = 20
 
 
-    'TOŠi”[—p‚Ì”z—ñ•Ï”
+    'TOï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½
     adressAry1() = getInitArray(rec, 15, ActiveSheet.Name)
     Dim ToArry() As String
     ToArry() = InputArray(ShintyokuFile, ShintyokuSheet, adressAry1(), ListStart, "", "", "", ReadRecord)
     
     
-    'CCŠi”[—p‚Ì”z—ñ•Ï”
+    'CCï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½
     adressAry1() = getInitArray(rec, 18, ActiveSheet.Name)
     Dim CcArry() As String
     CcArry() = InputArray(ShintyokuFile, ShintyokuSheet, adressAry1(), ListStart, "", "", "", ReadRecord)
     
     
-    '“Y•tƒtƒ@ƒCƒ‹Ši”[—p‚Ì”z—ñ•Ï”€–Ú
+    'ï¿½Yï¿½tï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½ï¿½ï¿½ï¿½ï¿½
     adressAry1() = getInitArray(rec, 20, ActiveSheet.Name)
     Dim AttachArryLbl() As String
     AttachArryLbl = adressAry1
     
-    '“Y•tƒtƒ@ƒCƒ‹Ši”[—p‚Ì”z—ñ•Ï”
+    'ï¿½Yï¿½tï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½
     adressAry1() = getInitArray(rec, 21, ActiveSheet.Name)
     Dim AttachArry() As String
     AttachArry() = InputArray(ShintyokuFile, ShintyokuSheet, adressAry1(), ListStart, "", "", "", ReadRecord)
 
 
-    '“Y•tƒtƒ@ƒCƒ‹Ši”[æƒtƒHƒ‹ƒ_[‚Ì”z—ñ•Ï”
+    'ï¿½Yï¿½tï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½iï¿½[ï¿½ï¿½tï¿½Hï¿½ï¿½ï¿½_ï¿½[ï¿½Ì”zï¿½ï¿½Ïï¿½
     Dim adressAry6(0) As String
     adressAry6(0) = AttFolder
     Dim AttFolderAry() As String
     AttFolderAry() = InputArray(ShintyokuFile, ShintyokuSheet, adressAry6(), ListStart, "", "", "", ReadRecord)
 
-    'WORDƒeƒ“ƒvƒŒ[ƒgƒtƒ@ƒCƒ‹,Ši”[—p‚Ì”z—ñ•Ï”
+    'WORDï¿½eï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½,ï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½
     adressAry1() = getInitArray(rec, 2, ActiveSheet.Name)
     adressAry2() = getInitArray(rec, 3, ActiveSheet.Name)
     adressAry3() = getInitArray(rec, 4, ActiveSheet.Name)
     
-    '1ŸŒ³”z—ñ‚©‚ç•¡”ŸŒ³”z—ñ‚Ö
+    '1ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ñ‚©‚ç•¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½
     WordTemp() = arry2(adressAry1, adressAry2)
     WordTemp() = arry2(WordTemp, adressAry3)
 
@@ -145,34 +145,34 @@ Public Sub mainProc8()
     w3() = WordTempMail(wrdTmp, WordTemp(2, 1))
 
 
-    'WORDƒeƒ“ƒvƒŒ[ƒgƒtƒ@ƒCƒ‹“à’èŒ`•¶š’uŠ·@WORD–{•¶’†‚Ì’uŠ·•¶š,Ši”[—p‚Ì”z—ñ•Ï”
+    'WORDï¿½eï¿½ï¿½ï¿½vï¿½ï¿½ï¿½[ï¿½gï¿½tï¿½@ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½@WORDï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½Ì’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½,ï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½
     adressAry1() = getInitArray(rec, 6, ActiveSheet.Name)
     adressAry2() = getInitArray(rec, 7, ActiveSheet.Name)
     
-    '1ŸŒ³”z—ñ‚©‚ç•¡”ŸŒ³”z—ñ‚Ö
+    '1ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ñ‚©‚ç•¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½
     WordReplace() = arry2(adressAry1, adressAry2)
 
 
-    'Word·‚µ‚İKeyWord
+    'Wordï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½KeyWord
     adressAry1() = getInitArray(rec, 10, ActiveSheet.Name)
-    'i’»ƒŠƒXƒg—ñ”Ô†
+    'ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½Ôï¿½
     adressAry2() = getInitArray(rec, 11, ActiveSheet.Name)
     
 
-    'i’»ƒŠƒXƒg‚©‚çæ“¾‚µ‚½A“]‹L—pƒf[ƒ^Ši”[—p‚Ì”z—ñ•Ï”
+    'ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½ï¿½Aï¿½]ï¿½Lï¿½pï¿½fï¿½[ï¿½^ï¿½iï¿½[ï¿½pï¿½Ì”zï¿½ï¿½Ïï¿½
     Dim dataAry() As String
 
-    'i’»ƒŠƒXƒg‚©‚çİ’è’l‚Ì“Ç‚İ‚İÀs
+    'ï¿½iï¿½ï¿½ï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½ï¿½İ’ï¿½lï¿½Ì“Ç‚İï¿½ï¿½İï¿½ï¿½s
     dataAry() = InputArray(ShintyokuFile, ShintyokuSheet, adressAry2(), ListStart, "", "", "", ReadRecord)
 
-    'dataAry()‚ÉWordTemp“à‚ÌŒŸõ’uŠ·—pƒL[ƒ[ƒhi•Ï”–¼FadressAry1j‚ğ1—ñ’Ç‰Á‚µA3ŸŒ³”z—ñ‚É
+    'dataAry()ï¿½ï¿½WordTempï¿½ï¿½ï¿½ÌŒï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½pï¿½Lï¿½[ï¿½ï¿½ï¿½[ï¿½hï¿½iï¿½Ïï¿½ï¿½ï¿½ï¿½FadressAry1ï¿½jï¿½ï¿½1ï¿½ï¿½Ç‰ï¿½ï¿½ï¿½ï¿½A3ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½ï¿½
     Dim mailBody() As String
     
     Dim kw As Long
     kw = 1
     
-    '’èŒ`•¶š’uŠ·@WORD–{•¶’†‚Ì’uŠ·•¶š’Ç‰Á
-    '”z—ñ‚ÌƒJƒEƒ“ƒg‚ÍA0n‚Ü‚è‚È‚Ì‚ÅAŒÂ”‚Í2‚È‚Ì‚Å+1
+    'ï¿½ï¿½`ï¿½ï¿½ï¿½ï¿½ï¿½uï¿½ï¿½ï¿½@WORDï¿½{ï¿½ï¿½ï¿½ï¿½ï¿½Ì’uï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç‰ï¿½
+    'ï¿½zï¿½ï¿½ÌƒJï¿½Eï¿½ï¿½ï¿½gï¿½ÍA0ï¿½nï¿½Ü‚ï¿½È‚Ì‚ÅAï¿½Âï¿½ï¿½ï¿½2ï¿½È‚Ì‚ï¿½+1
      
     ReDim mailBody(UBound(dataAry, 1), UBound(adressAry1, 1) + UBound(WordReplace, 1) + 1, kw)
 
@@ -264,10 +264,10 @@ Public Sub mainProc8()
 '          aryAtach = aryTrance(AttachArry, i)
 
        
-      'Œ–¼‚Ìs”’Tõˆ—
+      'ï¿½ï¿½ï¿½ï¿½ï¿½Ìsï¿½ï¿½ï¿½Tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
       Dim s As Long
       For s = 0 To UBound(workBody, 1)
-       If InStr(workBody(s), "Œ–¼") > 0 Then
+       If InStr(workBody(s), "ï¿½ï¿½ï¿½ï¿½") > 0 Then
         Exit For
        End If
       Next s
@@ -305,27 +305,27 @@ Public Sub mainProc8()
 '    Dim WordTrance3() As String
 '    WordTrance3() = arry2(adressAry1_3, WordTrance)
 
-'    'ÀÑ•ñ‘‚Ì“]‹Læ‚ÌƒZƒ‹”Ô’nŠi”[—p
+'    'ï¿½ï¿½ï¿½Ñ•ñï¿½ï¿½Ì“]ï¿½Lï¿½ï¿½ÌƒZï¿½ï¿½ï¿½Ô’nï¿½iï¿½[ï¿½p
 '    Dim MapingAry() As String
-'    'ÀÑ•ñ‚ÌƒZƒ‹”Ô’nİ’è u”Ô’nvAs—ñ”Ô†A‰æ–ÊƒV[ƒg–¼‚ğw’è
+'    'ï¿½ï¿½ï¿½Ñ•ñ‚ÌƒZï¿½ï¿½ï¿½Ô’nï¿½İ’ï¿½ ï¿½uï¿½Ô’nï¿½vï¿½Aï¿½sï¿½ï¿½Ôï¿½ï¿½Aï¿½ï¿½ÊƒVï¿½[ï¿½gï¿½ï¿½ï¿½ï¿½ï¿½wï¿½ï¿½
 '    MapingAry() = getInitArray(rec, 7, ActiveSheet.Name)
 '
 '
 
 '
 '
-'    'À{•ñ‘‚Ö‚Ì“]‹Lˆ—
-''    Call PosToFile(OutPutFolder, "", Jisitemplate, dataAry(), -1, MapingAry(), "ÀÑ•ñ", True)
+'    'ï¿½ï¿½ï¿½{ï¿½ñï¿½ï¿½Ö‚Ì“]ï¿½Lï¿½ï¿½ï¿½ï¿½
+''    Call PosToFile(OutPutFolder, "", Jisitemplate, dataAry(), -1, MapingAry(), "ï¿½ï¿½ï¿½Ñ•ï¿½", True)
 '
 '    Call PosToFile(OutPutFolder, "", Jisitemplate, dataAry(), -1, MapingAry(), templateSheet, True, fileExt, fileFmt)
 
-MsgBox "ˆ—‚ªI—¹‚µ‚Ü‚µ‚½"
+MsgBox "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½"
 
 End Sub
 
 Public Function arry2(ary1() As String, ary2() As String) As String()
 
-   '1ŸŒ³”z—ñ
+   '1ï¿½ï¿½ï¿½ï¿½ï¿½zï¿½ï¿½
 
     Dim i As Long
     Dim j As Long
